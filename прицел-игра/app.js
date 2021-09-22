@@ -75,9 +75,17 @@ function createRandomCircle() {
   circle.style.height= `${size}px`
   circle.style.top = `${y}px`
   circle.style.left = `${x}px`
+  const color = getRandomColor()
+  circle.style.backgroundColor = color
+  circle.style.boxShadow = `0 0 2px ${color}, 0 0  10px ${color}`
+
   board.append(circle)
 }
 
 function getRandomNum(min, max) {
   return  Math.round( Math.random() * (max - min) + min)
+}
+
+function getRandomColor() {
+  return colors[ Math.floor(Math.random() * colors.length)]
 }
